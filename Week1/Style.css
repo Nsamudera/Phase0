@@ -32,7 +32,7 @@ li {
 }
 
 #banner {
-  background-image: url("/home/ns/Documents/Project/Assets/Blank_Canvas_Only.png");
+  background-image: url("Assets/Blank_Canvas_Only.png");
   background-size: cover;
   background-position: center;
   width: 300px;
