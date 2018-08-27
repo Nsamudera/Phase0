@@ -1,0 +1,46 @@
+1. Newton Second Law
+
+STORE "mass" with value of 600
+STORE "acceleration" with value of 2
+STORE "force" without any value
+
+CALCULATE "mass" times "acceleration"
+SET "force" value with calculation result
+
+DISPLAY "force"
+
+2. Tahun Kabisat
+
+STORE "year" with chosen value
+
+IF "year" modulo (%) by 4 equal to 0
+  and
+  IF "year" modulo (%) by 100 equal to 0
+    and
+    IF "year" modulo (%) by 400 equal to 0
+      DISPLAY '"year" is a leap year'
+ELSE
+  DISPLAY '"year" is not a leap year'
+
+3. Laundry Day
+
+STORE "laundry amount" with 0
+
+WHILE "laundry amount" < 20
+  ADD "laundry amount" by 1
+
+DISPLAY 'Laundry is ready to be used'
+
+4. Periksa Kuku
+
+STORE "nail_length" with chosen value
+STORE "student_nail" with any value
+STORE "student_count" to 1
+
+WHILE "student_count" < 40
+  DISPLAY "student_count"
+  IF "student_nail" is less than "nail_length"
+      DISPLAY 'Nail is acceptable. Give praise'
+  ELSE
+      DISPLAY 'Nail is not acceptable. Give punishment'    
+  ADD "student_count" by 1
