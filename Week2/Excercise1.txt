@@ -15,10 +15,16 @@ STORE "year" with chosen value
 
 IF "year" modulo (%) by 4 equal to 0
   and
+  IF "year" modulo (%) by 100 is not equal to 0
+    DISPLAY '"year" is a leap year'
+
+ELSE IF "year" modulo (%) by 4 equal to 0
+  and
   IF "year" modulo (%) by 100 equal to 0
     and
     IF "year" modulo (%) by 400 equal to 0
       DISPLAY '"year" is a leap year'
+
 ELSE
   DISPLAY '"year" is not a leap year'
 
@@ -37,7 +43,7 @@ STORE "nail_length" with chosen value
 STORE "student_nail" with any value
 STORE "student_count" to 1
 
-WHILE "student_count" < 40
+WHILE "student_count" <= 40
   DISPLAY "student_count"
   IF "student_nail" is less than "nail_length"
       DISPLAY 'Nail is acceptable. Give praise'
