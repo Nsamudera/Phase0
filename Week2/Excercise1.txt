@@ -11,6 +11,15 @@ DISPLAY "force"
 
 2. Tahun Kabisat
 
+//Algorithm
+
+1. Pick a year to check whether it is a leap year or not.
+2. Check to see if the chosen year is divisible by 4 and not divisible by 100
+3. Check to see if the chosen year is divisible by 4, 100, and 400.
+4. If the year meets the criteria set in 2 or 3, then it is a leap year.
+5. If the year does not meet either criteria, then it is not a leap year.
+  
+//Pseudocode
 STORE "year" with chosen value
 
 IF "year" modulo by 4 equal to 0
@@ -30,6 +39,13 @@ ELSE
 
 3. Laundry Day
 
+//Algorithm
+1. Open the washing machine and make sure that there is nothing inside.
+2. Put a piece of clothing inside the washing machine.
+3. Count the total amount of clothings that is put inside the machine.
+4. Once the total amount of clothings reaches 20, start the machine.
+
+//Pseudocode
 STORE "laundry amount" with 0
 
 WHILE "laundry amount" < 20
@@ -39,6 +55,15 @@ DISPLAY 'Laundry is ready to be used'
 
 4. Periksa Kuku
 
+//Algorithm
+1. Call the first student.
+2. Check the student's nails.
+3. If the student's nails is longer than the criteria, then punish the student.
+4. If the student's nails is meets the criteria, then praise the student.
+5. Count the student and add it to the total of students checked.
+6. Repeat the process until all 40 students are checked.
+
+//Pseudocode
 STORE "nail_length" with chosen value
 STORE "student_nail" with any value
 STORE "student_count" to 1
