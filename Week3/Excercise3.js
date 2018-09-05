@@ -11,8 +11,9 @@ function dataHandling(){
     for(var n=0; n<input.length; n++){
         console.log('Nomor ID: ' + input[n][0])
         console.log('Nama Lengkap: ' + input[n][1])
-        console.log('TTL: ' + input[n][2] + '' + input[n][3])
+        console.log('TTL: ' + input[n][2] + ' ' + input[n][3])
         console.log('Hobi: ' + input[n][4])
+        console.log('\n') // to add space between array inputs
     }
 }
 
