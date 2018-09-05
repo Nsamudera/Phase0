@@ -1,23 +1,30 @@
-function angkaPalindrome (num){
-//to create a function that will return the palindorme of a given number
-function checkPalindrome (num) {
-  var palindrome=''
-  for(index=0; index<num.toString().length;index++){
-    palindrome = num.toString()[index] + palindrome
-}
-  return palindrome
-}
-//Start of angkaPalindorme function
-if (num<9){
-  return num+1
-} else {
-num = num +1
-while(checkPalindrome(num)!=num){
-    num=num+1
-    checkPalindrome(num)
+//Logic Challenge - Number Palindrome
+
+function angkaPalindrome(num) {
+  //to create a function that will return the palindrome of a given number
+  function checkPalindrome(num) {
+    var palindrome = '';
+    //for each instance that 'index' is less than the length of the number, then . . .
+    for (var index = 0; index < num.toString().length; index++) {
+      //add the letter to the output ('palindrome')
+      palindrome = num.toString()[index] + palindrome;
+    }
+    //once done, return/store the output result
+    return palindrome;
   }
-  return num
-}
+  //Start of angkaPalindorme function
+  if (num < 9) {
+    return num + 1;
+  } else {
+    num = num + 1;
+    // while palindrome (which is done by calling the function to return the palidnrome result) is not equal to the orignal input . . .
+    while (checkPalindrome(num) != num) {
+      // move to the next number and check if it is a palindrome
+      num = num + 1;
+      checkPalindrome(num);
+    }
+    return num;
+  }
 }
 
 // TEST CASES
