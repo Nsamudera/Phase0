@@ -8,7 +8,7 @@ var input = [
 ]
 
 function dataHandling(){
-    //for each instance that the number of array (variable 'n) is less than the length of the input array then . . . 
+    //for each instance that the number of array (variable 'n') is less than the length of the input array then . . . 
     for(var n=0; n<input.length; n++){
         console.log('Nomor ID: ' + input[n][0]) // Display the ID number of the current array (index 0)
         console.log('Nama Lengkap: ' + input[n][1]) // Display the name of the current array (index 1)
