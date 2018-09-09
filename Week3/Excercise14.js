@@ -1,5 +1,4 @@
 function mengelompokkanAngka(arr) {
-  // you can only write your code here!
   var ganjil =[] // to store the array containing angka ganjil
   var genap= [] // to store the array containing angka genap
   var kelipatan3=[] // to store the array containing angka kelipatan3

@@ -1,142 +1,76 @@
-function groupAnimals(animals) {
-  var a = []
-  var b = []
-  var c = []
-  var d = []
-  var e = []
-  var f = []
-  var g = []
-  var h = []
-  var i = []
-  var j = []
-  var k = []
-  var l = []
-  var m = []
-  var n = []
-  var o = []
-  var p = []
-  var q = []
-  var r = []
-  var s = []
-  var t = []
-  var u = []
-  var v = []
-  var w = []
-  var x = []
-  var y = []
-  var z = []
-  var output = []
 
-  // This section is to take each string within the array and categorize it based on the first letter
-  for (index = 0; index < animals.length; index++) {
-    if (animals[index][0] == 'a') {
-      a.push(animals[index])
-    } else if (animals[index][0] == 'b') {
-      b.push(animals[index])
-    } else if (animals[index][0] == 'c') {
-      c.push(animals[index])
-    } else if (animals[index][0] == 'd') {
-      d.push(animals[index])
-    } else if (animals[index][0] == 'e') {
-      e.push(animals[index])
-    } else if (animals[index][0] == 'f') {
-      f.push(animals[index])
-    } else if (animals[index][0] == 'g') {
-      g.push(animals[index])
-    } else if (animals[index][0] == 'h') {
-      h.push(animals[index])
-    } else if (animals[index][0] == 'i') {
-      i.push(animals[index])
-    } else if (animals[index][0] == 'j') {
-      j.push(animals[index])
-    } else if (animals[index][0] == 'k') {
-      k.push(animals[index])
-    } else if (animals[index][0] == 'l') {
-      l.push(animals[index])
-    } else if (animals[index][0] == 'm') {
-      m.push(animals[index])
-    } else if (animals[index][0] == 'n') {
-      n.push(animals[index])
-    } else if (animals[index][0] == 'o') {
-      o.push(animals[index])
-    } else if (animals[index][0] == 'p') {
-      p.push(animals[index])
-    } else if (animals[index][0] == 'q') {
-      q.push(animals[index])
-    } else if (animals[index][0] == 'r') {
-      r.push(animals[index])
-    } else if (animals[index][0] == 's') {
-      s.push(animals[index])
-    } else if (animals[index][0] == 't') {
-      t.push(animals[index])
-    } else if (animals[index][0] == 'u') {
-      u.push(animals[index])
-    } else if (animals[index][0] == 'v') {
-      v.push(animals[index])
-    } else if (animals[index][0] == 'w') {
-      w.push(animals[index])
-    } else if (animals[index][0] == 'x') {
-      x.push(animals[index])
-    } else if (animals[index][0] == 'y') {
-      y.push(animals[index])
-    } else if (animals[index][0] == 'z') {
-      z.push(animals[index])
+function groupAnimals(animals) {
+
+  //to create a new variable to be used during sorting, since the index of the original input will be used for comparison
+  var sortedInput = animals.slice();
+
+  //Step1. Sort the input/array so that it is easier to aplhabetize the result
+
+  //for each instance that 'staticWord' is less than the lenght of the sorted Array . . .
+  //'staticWord' = the first word that we will compare that will not change
+  for (var staticWord = 0; staticWord < sortedInput.length; staticWord++) {
+    //'comparedWord' = the second word that we will compare that will change each time when we are comparing with the staticWord
+    for (var comparedWord = staticWord + 1; comparedWord < sortedInput.length; comparedWord++) {
+
+      //If the first word ('staticWord') is greater than the second word ('comparedWord') 
+      // AND
+      //the words being compared does not start with the same letter 
+      //   *** Note that when sorting alphabet a < z  
+      if (sortedInput[staticWord] > sortedInput[comparedWord] && sortedInput[staticWord][0] !== sortedInput[comparedWord][0]) {
+        //Swap the first word with the second word
+        temp = sortedInput[staticWord]
+        sortedInput[staticWord] = sortedInput[comparedWord]
+        sortedInput[comparedWord] = temp
+      }
+
+      var diffOriInput = (Number(animals.indexOf(sortedInput[staticWord])) - Number(animals.indexOf(sortedInput[comparedWord]))) // To find the spacing in the original input between the two words being compared
+      var diffSortedInput = (Number(sortedInput.indexOf(sortedInput[staticWord])) - Number(sortedInput.indexOf(sortedInput[comparedWord]))) // To find the spacing in the sorted input between the two words being compared
+      //If the first word and second word starts with the same letter 
+      // AND
+      //The product of the difference between the spacing of the words in the original input and the difference of the words in the sorted input is less than 0
+      //    ***The purpose is that if the spacing between the words being compared has a different sign (example in the orignal it is positive (+), while in the sorted it is negative (-), this means that words in the sorted array is in a different position than the orginal, and that we should switch them out)
+      if (sortedInput[staticWord][0] == sortedInput[comparedWord][0] && ((diffOriInput * diffSortedInput) < 0)) {
+        //Swap the first and second word
+        temp = sortedInput[staticWord]
+        sortedInput[staticWord] = sortedInput[comparedWord]
+        sortedInput[comparedWord] = temp
+      }
     }
   }
-
-  //This section is to display the result (var 'output') only if the variable is not empty
-  if (a != '') {
-    output.push(a)
-  } if (b != '') {
-    output.push(b)
-  } if (c != '') {
-    output.push(c)
-  } if (d != '') {
-    output.push(d)
-  } if (e != '') {
-    output.push(e)
-  } if (f != '') {
-    output.push(f)
-  } if (g != '') {
-    output.push(g)
-  } if (h != '') {
-    output.push(h)
-  } if (i != '') {
-    output.push(i)
-  } if (j != '') {
-    output.push(j)
-  } if (k != '') {
-    output.push(k)
-  } if (l != '') {
-    output.push(l)
-  } if (m != '') {
-    output.push(m)
-  } if (n != '') {
-    output.push(n)
-  } if (o != '') {
-    output.push(o)
-  } if (p != '') {
-    output.push(p)
-  } if (q != '') {
-    output.push(q)
-  } if (r != '') {
-    output.push(r)
-  } if (s != '') {
-    output.push(s)
-  } if (t != '') {
-    output.push(t)
-  } if (u != '') {
-    output.push(u)
-  } if (v != '') {
-    output.push(v)
-  } if (w != '') {
-    output.push(w)
-  } if (x != '') {
-    output.push(x)
-  } if (y != '') {
-    output.push(y)
-  } if (z != '') {
-    output.push(z)
+  //Step2. To Group the inputs in the array based on first letter 
+  
+  //Create a variable to store the output and set it to the first item of the input
+  //   *** note that the first item is put under []. This is because we want words with the same letter to be under its own array
+  var output = [[sortedInput[0]]]
+  
+  //For each instance that the index 'i' is less than the length of the array/input . . .
+  //   *** the point of this loop is to check each individual animal word from the input
+  for (i = 1; i < sortedInput.length; i++) {
+    //For each instance that the index 'j' is less than the length of the output . . .
+    //   *the point of this loop is to check each individual animal word from the output and compare it with each word from the input/array
+    for (j = 0; j < output.length; j++) {
+      //Set a var 'unique' and set it to blank
+      //this will be used to check whether the first letter of the word is unique or not
+      var unique = ''
+      //If the first letter of the current index/animal word of the input is the same as the first letter of the current index/animal word of the output 
+      if (sortedInput[i][0] == output[j][0][0]) {
+        //Add 1 to unique: 
+        //   *** the point is to make it not blank.
+        unique = unique + 1
+        //Push the animal word to the output array containing that letter (which will be the word at current index of j)
+        output[j].push(sortedInput[i])
+        break
+      }
+    }
+    //If after each input array and output array has been checked for same first letter, and the 'unique' variable is still blank . . .
+    if (unique == '') {
+      //Push the word from the input to the back of the output
+      output.push([sortedInput[i]])
+    }
   }
   return output
 }
+// TEST CASES
+console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil']));
+// [ ['ayam', 'anoa'], ['cacing'], ['kuda', 'kancil'] ]
+console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil', 'unta', 'cicak']));
